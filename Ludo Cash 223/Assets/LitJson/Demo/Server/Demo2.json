@@ -1,0 +1,23 @@
+{
+    "str_value": "power is zero.",
+    "str_values": [ "John", "Doe" ],
+    "int_value": 1,
+    "int_values": [ 2 ],
+    "long_value": 3,
+    "long_values": [ 4 ],
+    "float_value": 5.1,
+    "float_values": [ 5.2 ],
+    "double_value": 6.1,
+    "double_values": [ 6.2 ],
+    "bool_value": true,
+    "bool_values": [ false ],
+    "class_value": { "id": 7, "name": "Dream Catcher" },
+    "class_values": [
+        {
+            "id": 8,
+            "name": "Kyapura",
+            "inner_class": { "id": 9, "name": "Gyro" },
+            "game_data": [ { "game_version": 10, "parameter": [ 11 ] }, { "game_version": 12, "parameter": [ 13 ] } ]
+        }
+    ]
+}

@@ -1,0 +1,445 @@
+fileFormatVersion: 2
+guid: a33afdf4f7d514fd8bf8b5fa582dc956
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: blueDiceValue_0
+  - first:
+      213: 21300002
+    second: blueDiceValue_1
+  - first:
+      213: 21300004
+    second: blueDiceValue_2
+  - first:
+      213: 21300006
+    second: blueDiceValue_3
+  - first:
+      213: 21300008
+    second: blueDiceValue_4
+  - first:
+      213: 21300010
+    second: blueDiceValue_5
+  - first:
+      213: -3760370591865960289
+    second: blueDiceValue_6
+  - first:
+      213: -3624034418165699732
+    second: blueDiceValue_7
+  - first:
+      213: -13534448812746300
+    second: blueDiceValue_8
+  - first:
+      213: -1117149021673926307
+    second: blueDiceValue_9
+  - first:
+      213: 4950318910131936046
+    second: blueDiceValue_10
+  - first:
+      213: 5598731891581937373
+    second: blueDiceValue_11
+  - first:
+      213: -1580373303718128121
+    second: blueDiceValue_12
+  - first:
+      213: -3005439449056018909
+    second: blueDiceValue_13
+  - first:
+      213: -2221336855010054136
+    second: blueDiceValue_14
+  - first:
+      213: -3472734649124519483
+    second: blueDiceValue_15
+  - first:
+      213: 3936695459344235078
+    second: blueDiceValue_16
+  - first:
+      213: -2634999110121267365
+    second: blueDiceValue_17
+  - first:
+      213: -3286104032535186191
+    second: blueDiceValue_18
+  - first:
+      213: -5167070885224940808
+    second: blueDiceValue_19
+  - first:
+      213: -3132445305246844622
+    second: blueDiceValue_20
+  - first:
+      213: -6355004719156011822
+    second: blueDiceValue_21
+  - first:
+      213: 3345568587776347041
+    second: blueDiceValue_22
+  - first:
+      213: 6277291823706058965
+    second: blueDiceValue_23
+  - first:
+      213: 5078788853808666354
+    second: blueDiceValue_24
+  - first:
+      213: -617041760180868384
+    second: blueDiceValue_25
+  - first:
+      213: -7657213643367771496
+    second: blueDiceValue_26
+  - first:
+      213: -433517833458537567
+    second: blueDiceValue_27
+  - first:
+      213: 4396946613785572739
+    second: blueDiceValue_28
+  - first:
+      213: -3916763762276868812
+    second: blueDiceValue_29
+  - first:
+      213: 2580554586608051833
+    second: blueDiceValue_30
+  - first:
+      213: -4575977277072529719
+    second: blueDiceValue_31
+  - first:
+      213: 7702527883954180104
+    second: blueDiceValue_32
+  - first:
+      213: -1862062154115059582
+    second: blueDiceValue_33
+  - first:
+      213: -4134857556322931003
+    second: blueDiceValue_34
+  - first:
+      213: 8533201209487633660
+    second: blueDiceValue_35
+  - first:
+      213: -5243347601305765325
+    second: blueDiceValue_36
+  - first:
+      213: -4862194869639233447
+    second: blueDiceValue_37
+  - first:
+      213: -3588480057038831774
+    second: blueDiceValue_38
+  - first:
+      213: 1724202676497488157
+    second: blueDiceValue_39
+  - first:
+      213: 963170508273605960
+    second: blueDiceValue_40
+  - first:
+      213: 8144213786802002502
+    second: blueDiceValue_41
+  - first:
+      213: -5645928611680903039
+    second: blueDiceValue_42
+  - first:
+      213: -9027464595463979391
+    second: blueDiceValue_43
+  - first:
+      213: -1018827847629726218
+    second: blueDiceValue_44
+  - first:
+      213: -836113590920831769
+    second: blueDiceValue_45
+  - first:
+      213: 7089335643172604318
+    second: blueDiceValue_46
+  - first:
+      213: -5796961951122443738
+    second: blueDiceValue_47
+  - first:
+      213: 6921740967284995384
+    second: blueDiceValue_48
+  - first:
+      213: -9174344528002155558
+    second: blueDiceValue_49
+  - first:
+      213: -5756109038792953929
+    second: blueDiceValue_50
+  - first:
+      213: -1428189509223476125
+    second: blueDiceValue_51
+  - first:
+      213: -9194183391155829534
+    second: blueDiceValue_52
+  - first:
+      213: -9197369116713568317
+    second: blueDiceValue_53
+  - first:
+      213: 2726654743115516164
+    second: blueDiceValue_54
+  - first:
+      213: 364631988814054067
+    second: blueDiceValue_55
+  - first:
+      213: -4005416686305353490
+    second: blueDiceValue_56
+  - first:
+      213: -7170655711543080030
+    second: blueDiceValue_57
+  - first:
+      213: -3774751335319100564
+    second: blueDiceValue_58
+  - first:
+      213: 4987757399120438037
+    second: blueDiceValue_59
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 52
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blueDiceValue_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 12
+        width: 135
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0899055f4897ac4f9c5dccfaa39d40b
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueDiceValue_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 185
+        width: 135
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc495f0576a6fd242ac868f5839b8e75
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueDiceValue_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 351
+        width: 135
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b702eeee0bb12f846b991314360214a0
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueDiceValue_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 530
+        width: 134
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424947b6dff1b9e4da06aa3f7237f179
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueDiceValue_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 699
+        width: 135
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9edd37039ce7f37458032fbeeb7f3350
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueDiceValue_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 864
+        width: 135
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e09e19d1804ba544be2486bad670c0d
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2eb1abce34c255c4fad6c7c606062914
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

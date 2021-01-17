@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d57adefe3768ca24aaaf5cfffcc6a8cd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kabel Md BT
+  fontNames:
+  - Kabel Md BT
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4952fec1cd74da740953f752c96f04aa, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

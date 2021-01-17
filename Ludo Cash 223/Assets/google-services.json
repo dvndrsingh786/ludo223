@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "644007090833",
+    "project_id": "ludocashwin-eb3c4",
+    "storage_bucket": "ludocashwin-eb3c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644007090833:android:d69b89212fdb4f8d4d7d30",
+        "android_client_info": {
+          "package_name": "com.GobalNick.LudoCashWin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644007090833-7c8qpopueon4mjqv4vpjrqtamhgvd2hg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.GobalNick.LudoCashWin",
+            "certificate_hash": "4b6e24f84495d21d699447e67c49b7868f7c6eee"
+          }
+        },
+        {
+          "client_id": "644007090833-8163t54v4oj6063oupdq1aa40i7usd8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBvttqO9ssRbQL-yhfInjA_62vzOtdSPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644007090833-8163t54v4oj6063oupdq1aa40i7usd8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

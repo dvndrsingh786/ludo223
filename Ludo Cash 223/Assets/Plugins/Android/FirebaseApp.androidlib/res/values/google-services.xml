@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="gcm_defaultSenderId" translatable="false">644007090833</string>
+  <string name="google_storage_bucket" translatable="false">ludocashwin-eb3c4.appspot.com</string>
+  <string name="project_id" translatable="false">ludocashwin-eb3c4</string>
+  <string name="google_api_key" translatable="false">AIzaSyBBvttqO9ssRbQL-yhfInjA_62vzOtdSPE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBBvttqO9ssRbQL-yhfInjA_62vzOtdSPE</string>
+  <string name="google_app_id" translatable="false">1:644007090833:android:d69b89212fdb4f8d4d7d30</string>
+  <string name="default_android_client_id" translatable="false">644007090833-7c8qpopueon4mjqv4vpjrqtamhgvd2hg.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">644007090833-8163t54v4oj6063oupdq1aa40i7usd8o.apps.googleusercontent.com</string>
+</resources>
