@@ -321,7 +321,7 @@ public class GameDiceController : PunBehaviour
             if (PhotonNetwork.inRoom)
             {
                 TempGameManager.tempGM.view.RPC("SetAliveState", PhotonTargets.AllBuffered, true);
-                TempGameManager.tempGM.view.RPC("SetCurrentPlayerIndex", PhotonTargets.AllBuffered, FindObjectOfType<GameGUIController>().GetCurrentPlayerIndex());
+                //TempGameManager.tempGM.view.RPC("SetCurrentPlayerIndex", PhotonTargets.AllBuffered, FindObjectOfType<GameGUIController>().GetCurrentPlayerIndex());
                 //timer.SynchrozeTurnCount();
             }
             steps = Random.Range(1, 7);

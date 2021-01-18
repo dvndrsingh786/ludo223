@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UpdatePlayerTimer : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class UpdatePlayerTimer : MonoBehaviour
     public bool check;
     public string myPlayerName;
 
+    [SerializeField] int maxAutoMoves;
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] Transform autoMoveParent;
+
     public PhotonView myview;
 
     // Use this for initialization
@@ -25,6 +30,7 @@ public class UpdatePlayerTimer : MonoBehaviour
     void Start()
     {
         myPlayerName = "";
+        maxAutoMoves = 4;
         //Debug.LogError("Update Player Timer: " + gameObject.name);
         timer = gameObject.GetComponent<Image>();
         LudoPawnController[] com = FindObjectsOfType<LudoPawnController>();
@@ -54,6 +60,7 @@ public class UpdatePlayerTimer : MonoBehaviour
     {
         if(timer==null) timer = gameObject.GetComponent<Image>();
         if (!myview) myview = GetComponent<PhotonView>();
+        timerText.transform.parent.gameObject.SetActive(true);
         if (Gamedice != null)
             Gamedice.timer = this;
     }
@@ -67,15 +74,24 @@ public class UpdatePlayerTimer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (!paused)
-            updateClock();
+        if (!paused) 
+        {
+            if (!IsInvoking(nameof(updateClock))) 
+            {
+                playerTime = GameManager.Instance.playerTime;
+                timerText.text = playerTime.ToString() + "s";
+                updateClock();
+            }
+        }
     }
 
     public void restartTimer()
     {
         paused = false;
+        playerTime = GameManager.Instance.playerTime;
+        timerText.text = playerTime.ToString() + "s";
         timer.fillAmount = 1.0f;
     }
 
@@ -90,8 +106,11 @@ public class UpdatePlayerTimer : MonoBehaviour
             paused = false;
             audioSources[0].Stop();
             misschance = false;
-
+            playerTime = GameManager.Instance.playerTime;
+            timerText.text = playerTime.ToString() + "s";
         }
+
+        timerText.transform.parent.gameObject.SetActive(false); ;
     }
     public GameDiceController Gamedice;
     public Text playerchnaceLeft;
@@ -102,14 +121,19 @@ public class UpdatePlayerTimer : MonoBehaviour
         //Debug.LogError("Updating Clock");
         float minus;
 
-        playerTime = GameManager.Instance.playerTime;
-        if (GameManager.Instance.offlineMode)
-            playerTime = GameManager.Instance.playerTime + GameManager.Instance.cueTime;
-        minus = 1.0f / playerTime * Time.deltaTime;
+        playerTime--;
 
-        timer.fillAmount -= minus;
+        timerText.text = playerTime.ToString() + "s";
 
-        if (timer.fillAmount < 0.05f)
+        //playerTime = GameManager.Instance.playerTime;
+        //if (GameManager.Instance.offlineMode)
+        //    playerTime = GameManager.Instance.playerTime + GameManager.Instance.cueTime;
+        //minus = 1.0f / playerTime * Time.deltaTime;
+
+        //timer.fillAmount -= minus;
+
+        //if (timer.fillAmount < 0.05f)
+        if (playerTime < 1)
         {
             //Debug.LogError("Inside");
             audioSources[0].Play();
@@ -119,11 +143,13 @@ public class UpdatePlayerTimer : MonoBehaviour
             {
                 misschance = true;
                 turnCount++;
+                if(turnCount != maxAutoMoves)
+                autoMoveParent.GetChild(turnCount - 1).GetComponent<Image>().color = Color.red;
                 Debug.Log("TurnCount" + turnCount);
                 //SynchrozeTurnCount();
                 //  FindObjectOfType<GameGUIController>().playerCount.text = "Auto turn Chance" + turnCount;
                 playerchnaceLeft.text = "Auto Move: "+turnCount.ToString();
-                if (turnCount == 5)
+                if (turnCount == maxAutoMoves)
                 {
                     FindObjectOfType<GameGUIController>().LeaveGame(false);
                 }
@@ -139,10 +165,16 @@ public class UpdatePlayerTimer : MonoBehaviour
             }
         }
 
-        if (timer.fillAmount <= 0.0f)
+        //if (timer.fillAmount <= 0.0f)
+        if (playerTime < 1)
         {
             Pause();
             StartCoroutine(autoMove());
+        }
+        else
+        {
+            if(gameObject.activeInHierarchy)
+            Invoke(nameof(updateClock), 1);
         }
 
     }

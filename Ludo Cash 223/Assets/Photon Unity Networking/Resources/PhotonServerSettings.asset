@@ -37,11 +37,9 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
+  - SendTurns
   - SetAliveState
   - SetCurrentPlayerIndex
-  - SetTurnCount
-  - APlayerIsBack
-  - SendTurns
-  - SomeoneISBack
   - SetTurnCountDisabledFunction
+  - SomeoneISBack
   DisableAutoOpenWizard: 1

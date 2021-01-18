@@ -189,7 +189,12 @@ public class InitMenuScript : MonoBehaviour
         GameManager.Instance.playfabManager.splashCanvas.SetActive(false);
         Debug.Log("Load ad menu");
         // AdsManager.Instance.adsScript.ShowAd(AdLocation.GameStart);
-      //  GameManager.Instance.playfabManager.apiManager.OnRequestPlans();
+        //  GameManager.Instance.playfabManager.apiManager.OnRequestPlans();
+        NewGameManager newGameManager = FindObjectOfType<NewGameManager>();
+        Debug.LogError("Hiden");
+        newGameManager.newLoginScreen.SetActive(false);
+        newGameManager.mobileVerificationScreen.SetActive(false);
+        newGameManager.EnterYourPinScreen.SetActive(false);
     }
 
 

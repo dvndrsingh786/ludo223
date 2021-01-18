@@ -16,9 +16,9 @@ public class NewGameManager : MonoBehaviour
     [SerializeField] Image loadingBarFill;
     [SerializeField] float time;
 
-    [SerializeField] GameObject newLoginScreen;
-    [SerializeField] GameObject mobileVerificationScreen;
-    [SerializeField] GameObject EnterYourPinScreen;
+    public GameObject newLoginScreen;
+    public GameObject mobileVerificationScreen;
+    public GameObject EnterYourPinScreen;
 
     [SerializeField] TMP_InputField phoneNumberField;
     [SerializeField]GoogleSignInDemo googleInstance;
@@ -134,9 +134,23 @@ public class NewGameManager : MonoBehaviour
         });
     }
 
-    public void EditorTesting()
+    public void MoveToNextField(int curFieldIndex)
+    {
+        if (curFieldIndex + 1 < otpFields.Length)
+            otpFields[curFieldIndex + 1].ActivateInputField();
+        else Debug.LogError("Do nothing");
+    }
+
+    public void EditorTestingSK()
     {
         apimngr.phoneEmail = "911234567890";
+        apimngr.phoneEmail.Replace("+", "");
+        apimngr.PhoneMediaSignInStart();
+    }
+
+    public void EditorTestingDS()
+    {
+        apimngr.phoneEmail = "919876152916";
         apimngr.phoneEmail.Replace("+", "");
         apimngr.PhoneMediaSignInStart();
     }

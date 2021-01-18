@@ -128,6 +128,8 @@ public class APIManager : MonoBehaviour
     WWW w;
     string status;
     string url;
+
+    NewGameManager newGameManager;
     
     private string getBettingApi = "https://api1.ludocashwin.com/public/api/betting";
 
@@ -147,6 +149,7 @@ public class APIManager : MonoBehaviour
         Debug.LogError("API Manager" + gameObject.name);
         StartCoroutine(OpenLogin());
         StartCoroutine (LoginMenu());
+        newGameManager = FindObjectOfType<NewGameManager>();
     }
 
     void Update()
@@ -945,6 +948,9 @@ public class APIManager : MonoBehaviour
             print("Results occur" + Results);
             if (results == "Login Successfull" || status == "True")
             {
+                //newGameManager.newLoginScreen.SetActive(false);
+                //newGameManager.mobileVerificationScreen.SetActive(false);
+                //newGameManager.EnterYourPinScreen.SetActive(false);
                 canRegisterPhone = true;
                 //loginPanel.SetActive(false);
                 GameManager.Instance.avatarMyIndex = UnityEngine.Random.Range(0, 22);
@@ -2592,7 +2598,10 @@ public class APIManager : MonoBehaviour
             GameManager.Instance.nameMy = "";
             GameManager.Instance.avatarMy = null;
             GameManager.Instance.avatarIndex = null;
+            newGameManager.newLoginScreen.SetActive(true);
             LoginPanel.SetActive(true);
+            newGameManager.EnterYourPinScreen.SetActive(false);
+            newGameManager.mobileVerificationScreen.SetActive(false);
             PlayerPrefs.DeleteAll();
             playerStatsPanel.SetActive(false);
             _name.text = "";

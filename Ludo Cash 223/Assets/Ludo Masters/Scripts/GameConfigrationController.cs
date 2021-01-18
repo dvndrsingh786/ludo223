@@ -299,7 +299,7 @@ public class GameConfigrationController : MonoBehaviour
     public void startGame()
     {
         betCoins = GameManager.Instance.currentBetAmount;
-        if (betCoins <= GameManager.Instance.coinsCount)
+        if (betCoins <= GameManager.Instance.coinsCount || true)
         {
             
             if (GameManager.Instance.type != MyGameType.Private)
