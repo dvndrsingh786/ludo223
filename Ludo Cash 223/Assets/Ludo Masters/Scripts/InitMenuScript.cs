@@ -195,6 +195,7 @@ public class InitMenuScript : MonoBehaviour
         newGameManager.newLoginScreen.SetActive(false);
         newGameManager.mobileVerificationScreen.SetActive(false);
         newGameManager.EnterYourPinScreen.SetActive(false);
+        UIFlowHandler.uihandler.loadingPanel.SetActive(false);
     }
 
 

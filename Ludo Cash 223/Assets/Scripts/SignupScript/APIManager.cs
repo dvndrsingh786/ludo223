@@ -191,6 +191,7 @@ public class APIManager : MonoBehaviour
         yield return new WaitForSeconds(3.1f);
         if (PlayerPrefs.HasKey("Logintoken"))
         {
+            FindObjectOfType<NewGameManager>().newLoginScreen.SetActive(false);
             choosePanel.SetActive(false);
             GameManager.Instance.userID = PlayerPrefs.GetString("Logintoken");
             Debug.Log("has key");
@@ -1148,6 +1149,7 @@ public class APIManager : MonoBehaviour
                     canRegisterPhone = true;
                     loginerror.text = "Invalid Login";
                     Debug.Log("error");
+                    UIFlowHandler.uihandler.loadingPanel.SetActive(false);
                     FindObjectOfType<GoogleSignInDemo>().SignOutFromGooglePublic1();
                     FindObjectOfType<FacebookScriptDav>().SignOutFromFacebookPublic1();
                     loadinPanel.SetActive(false);
@@ -1166,6 +1168,7 @@ public class APIManager : MonoBehaviour
                 loginerror.text = "Invalid Login";
                 Debug.LogError("error Text: " + _w.text);
                 Debug.LogError("error: " + _w.error);
+                UIFlowHandler.uihandler.loadingPanel.SetActive(false);
                 FindObjectOfType<GoogleSignInDemo>().SignOutFromGooglePublic1();
                 FindObjectOfType<FacebookScriptDav>().SignOutFromFacebookPublic1();
                 loadinPanel.SetActive(false);
@@ -1210,6 +1213,7 @@ public class APIManager : MonoBehaviour
 
     public void PhoneMediaSignInStart()
     {
+        UIFlowHandler.uihandler.loadingPanel.SetActive(true);
         //AddSocialMediaSinupForm();
         string loginurl = "https://api1.ludocashwin.com/public/api/login";
         WWWForm form = new WWWForm();
@@ -1284,6 +1288,7 @@ public class APIManager : MonoBehaviour
                 }
                 else if (results == "The username has already been taken" || status == "false")
                 {
+                    UIFlowHandler.uihandler.loadingPanel.SetActive(false);
                     canRegisterPhone = true;
                     errorMsg.text = "The username has already been taken";
                     FindObjectOfType<GoogleSignInDemo>().SignOutFromGooglePublic1();
@@ -1294,6 +1299,7 @@ public class APIManager : MonoBehaviour
                 }
                 else
                 {
+                    UIFlowHandler.uihandler.loadingPanel.SetActive(false);
                     canRegisterPhone = true;
                     Debug.Log("A" + results);
                     errorMsg.text = results;
@@ -1331,6 +1337,7 @@ public class APIManager : MonoBehaviour
                 loadinPanel.SetActive(false);
                 FindObjectOfType<GoogleSignInDemo>().SignOutFromGooglePublic1();
                 FindObjectOfType<FacebookScriptDav>().SignOutFromFacebookPublic1();
+                UIFlowHandler.uihandler.loadingPanel.SetActive(false);
                 StopCoroutine(ErrorClose());
                 StartCoroutine(ErrorClose());
             }

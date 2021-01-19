@@ -13,7 +13,7 @@ using System;
 public class NewGameManager : MonoBehaviour
 {
     [SerializeField] GameObject splashScreen;
-    [SerializeField] Image loadingBarFill;
+    public Image loadingBarFill;
     [SerializeField] float time;
 
     public GameObject newLoginScreen;
@@ -24,7 +24,7 @@ public class NewGameManager : MonoBehaviour
     [SerializeField]GoogleSignInDemo googleInstance;
     private uint phoneAuthTimeoutMs;
     [SerializeField] TMP_InputField[] otpFields;
-
+    [SerializeField] TMP_InputField otpField;
     [SerializeField] APIManager apimngr;
 
     string verificationId;
@@ -40,11 +40,12 @@ public class NewGameManager : MonoBehaviour
         if (splashScreen.activeInHierarchy)
         {
             loadingBarFill.fillAmount += 0.0167f / time;
-            if (loadingBarFill.fillAmount >= 0.95f)
+            if (loadingBarFill.fillAmount >= 0.95f  && loadingBarFill.fillAmount < 0.98f)
             {
+                Debug.LogError(loadingBarFill.fillAmount + ": fill amount");
                 newLoginScreen.SetActive(true);
                 splashScreen.SetActive(false);
-                Debug.LogError(System.DateTime.Now);
+                Debug.LogError(DateTime.Now);
             }
         }
     }
@@ -101,11 +102,12 @@ public class NewGameManager : MonoBehaviour
 
     public void SigninWithOTP()
     {
-        string otp = "";
-        for (int i = 0; i < otpFields.Length; i++)
-        {
-            otp += otpFields[i].text;
-        }
+        string otp;
+        //for (int i = 0; i < otpFields.Length; i++)
+        //{
+        //    otp += otpFields[i].text;
+        //}
+        otp = otpField.text;
         PhoneAuthProvider provider = PhoneAuthProvider.GetInstance(googleInstance.auth);
         Credential credential = provider.GetCredential(verificationId, otp);
         SignIn(credential);
@@ -134,12 +136,12 @@ public class NewGameManager : MonoBehaviour
         });
     }
 
-    public void MoveToNextField(int curFieldIndex)
-    {
-        if (curFieldIndex + 1 < otpFields.Length)
-            otpFields[curFieldIndex + 1].ActivateInputField();
-        else Debug.LogError("Do nothing");
-    }
+    //public void MoveToNextField(int curFieldIndex)
+    //{
+    //    if (curFieldIndex + 1 < otpFields.Length)
+    //        otpFields[curFieldIndex + 1].ActivateInputField();
+    //    else Debug.LogError("Do nothing");
+    //}
 
     public void EditorTestingSK()
     {
