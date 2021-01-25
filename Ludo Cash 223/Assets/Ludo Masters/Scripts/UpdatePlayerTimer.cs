@@ -17,9 +17,10 @@ public class UpdatePlayerTimer : MonoBehaviour
     public bool check;
     public string myPlayerName;
 
-    [SerializeField] int maxAutoMoves;
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] Transform autoMoveParent;
+    public Transform autoMoveParent;
+    public int maxAutoMove = 4;
+    public TextMeshProUGUI secondsRemaining;
+    public GameObject timerObj;
 
     public PhotonView myview;
 
@@ -30,7 +31,7 @@ public class UpdatePlayerTimer : MonoBehaviour
     void Start()
     {
         myPlayerName = "";
-        maxAutoMoves = 4;
+        maxAutoMove = 4;
         //Debug.LogError("Update Player Timer: " + gameObject.name);
         timer = gameObject.GetComponent<Image>();
         LudoPawnController[] com = FindObjectsOfType<LudoPawnController>();
@@ -58,11 +59,13 @@ public class UpdatePlayerTimer : MonoBehaviour
     /// </summary>
     void OnEnable()
     {
-        if(timer==null) timer = gameObject.GetComponent<Image>();
+        if (timer == null) timer = gameObject.GetComponent<Image>();
         if (!myview) myview = GetComponent<PhotonView>();
-        timerText.transform.parent.gameObject.SetActive(true);
         if (Gamedice != null)
             Gamedice.timer = this;
+        timerObj.SetActive(true);
+        playerTime = GameManager.Instance.playerTime;
+        secondsRemaining.text = "20s";
     }
 
 
@@ -76,23 +79,21 @@ public class UpdatePlayerTimer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!paused) 
-        {
-            if (!IsInvoking(nameof(updateClock))) 
+        if (!paused)
+            if (!IsInvoking(nameof(updateClock)) && gameObject.activeInHierarchy)
             {
                 playerTime = GameManager.Instance.playerTime;
-                timerText.text = playerTime.ToString() + "s";
-                updateClock();
+                secondsRemaining.text = "20s";
+                Invoke(nameof(updateClock), 0.01f);
             }
-        }
     }
 
     public void restartTimer()
     {
         paused = false;
-        playerTime = GameManager.Instance.playerTime;
-        timerText.text = playerTime.ToString() + "s";
         timer.fillAmount = 1.0f;
+        playerTime = GameManager.Instance.playerTime;
+        secondsRemaining.text = "20s";
     }
 
 
@@ -107,10 +108,9 @@ public class UpdatePlayerTimer : MonoBehaviour
             audioSources[0].Stop();
             misschance = false;
             playerTime = GameManager.Instance.playerTime;
-            timerText.text = playerTime.ToString() + "s";
+            secondsRemaining.text = "20s";
+            timerObj.SetActive(false);
         }
-
-        timerText.transform.parent.gameObject.SetActive(false); ;
     }
     public GameDiceController Gamedice;
     public Text playerchnaceLeft;
@@ -120,11 +120,8 @@ public class UpdatePlayerTimer : MonoBehaviour
     {
         //Debug.LogError("Updating Clock");
         float minus;
-
         playerTime--;
-
-        timerText.text = playerTime.ToString() + "s";
-
+        secondsRemaining.text = ((int)playerTime).ToString() + "s";
         //playerTime = GameManager.Instance.playerTime;
         //if (GameManager.Instance.offlineMode)
         //    playerTime = GameManager.Instance.playerTime + GameManager.Instance.cueTime;
@@ -143,13 +140,13 @@ public class UpdatePlayerTimer : MonoBehaviour
             {
                 misschance = true;
                 turnCount++;
-                if(turnCount != maxAutoMoves)
-                autoMoveParent.GetChild(turnCount - 1).GetComponent<Image>().color = Color.red;
                 Debug.Log("TurnCount" + turnCount);
+                if(turnCount != maxAutoMove)
+                autoMoveParent.GetChild(turnCount - 1).GetComponent<Image>().color = Color.red;
                 //SynchrozeTurnCount();
                 //  FindObjectOfType<GameGUIController>().playerCount.text = "Auto turn Chance" + turnCount;
-                playerchnaceLeft.text = "Auto Move: "+turnCount.ToString();
-                if (turnCount == maxAutoMoves)
+                playerchnaceLeft.text = "Auto Move: " + turnCount.ToString();
+                if (turnCount == maxAutoMove)
                 {
                     FindObjectOfType<GameGUIController>().LeaveGame(false);
                 }
@@ -195,7 +192,7 @@ public class UpdatePlayerTimer : MonoBehaviour
 
     public void PlayerAutoMove()
     {
-        print( "NameDefine"+ Gamedice.steps);
+        print("NameDefine" + Gamedice.steps);
         if (!canWalkTurn) return;
         CancelInvoke();
         if (Gamedice.isMyDice)
@@ -209,7 +206,7 @@ public class UpdatePlayerTimer : MonoBehaviour
                 if (item.isOnBoard)
                     InBoard.Add(item);
             }
-            if (InBoard.Count >=3)
+            if (InBoard.Count >= 3)
             {
                 //by default opening the 
                 int ran = Random.Range(0, InBoard.Count);
@@ -236,7 +233,7 @@ public class UpdatePlayerTimer : MonoBehaviour
                     }
                 }
             }
-            
+
         }
         else
         {
@@ -306,6 +303,7 @@ public class UpdatePlayerTimer : MonoBehaviour
     IEnumerator autoMove()
     {
         StopAllCoroutines();
+        Debug.LogError("Auto move");
         TempGameManager.tempGM.view.RPC("SetAliveState", PhotonTargets.All, false);
         Gamedice.RollDice();
         //StartCoroutine(StartFinishTurnSlowly());
@@ -320,7 +318,7 @@ public class UpdatePlayerTimer : MonoBehaviour
         //}
         Invoke("PlayerAutoMove", 1f);
         yield return new WaitForSeconds(0.3f);
-        
+
         yield return new WaitForSeconds(0.6f);
         //Invoke("PlayerAutoMove", 0.15f);
         // turnCount++;

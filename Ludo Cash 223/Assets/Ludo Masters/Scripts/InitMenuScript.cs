@@ -139,7 +139,7 @@ public class InitMenuScript : MonoBehaviour
 
 
         FacebookLinkReward.GetComponent<Text>().text = "+ " + StaticStrings.CoinsForLinkToFacebook;
-        playerName.GetComponent<Text>().text = GameManager.Instance.nameMy;
+        playerName.GetComponent<Text>().text = GameManager.playerName;
         coinsText.GetComponent<Text>().text = GameManager.Instance.coinsCount.ToString();
       //  playerAvatar.GetComponent<RawImage>().texture =  GameManager.Instance.playfabManager.staticGameVariables.avatars[UnityEngine.Random.Range(0,22)].texture;
         GameManager.Instance.playfabManager.apiManager.Betting();
@@ -410,7 +410,7 @@ public class InitMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerName.text = GameManager.Instance.nameMy;
+        playerName.text = GameManager.playerName;
        // coinsText.text = GameManager.Instance.coinsCount.ToString();
     }
 

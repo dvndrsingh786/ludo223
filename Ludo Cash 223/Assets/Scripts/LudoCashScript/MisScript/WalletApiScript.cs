@@ -46,6 +46,11 @@ public class WalletApiScript : MonoBehaviour
        
     }
 
+    public void ChangeAmount(string amounttt)
+    {
+        amount.text = amounttt;
+    }
+
     public void OnWalletButtonClick()
     {
         string walletURL = "https://api1.ludocashwin.com/public/api/add-wallet";
@@ -135,6 +140,11 @@ public class WalletApiScript : MonoBehaviour
             errorMsg.text = "Please Enter the Amount.!!";
             StopCoroutine(Error());
             StartCoroutine(Error());
+            return;
+        }
+        if (float.Parse(amount.text) < 10)
+        {
+            ReferenceManager.refMngr.ShowError("Enter at least Rs.10");
             return;
         }
         Debug.Log("Id"+ GameManager.Uid);

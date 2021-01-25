@@ -320,6 +320,7 @@ public class APIManager : MonoBehaviour
                 GameManager.playerName = jsonvale["result_push"][0]["fullname"].ToString();
                 GameManager.mobileNumber = jsonvale["result_push"][0]["mobile"].ToString();
                 GameManager.emailId = jsonvale["result_push"][0]["email"].ToString();
+                PlayerPrefs.SetString("FriendRefCodePP", jsonvale["result_push"][0]["referal_refer_code"].ToString());
                 emailID.text = GameManager.emailId;
                 phoneNumber.text = GameManager.mobileNumber;
                 playerName.text = GameManager.playerName;
@@ -579,6 +580,7 @@ public class APIManager : MonoBehaviour
                 GameManager.playerName = jsonvale["result_push"][0]["fullname"].ToString();
                 GameManager.mobileNumber = jsonvale["result_push"][0]["mobile"].ToString();
                 GameManager.emailId = jsonvale["result_push"][0]["email"].ToString();
+                PlayerPrefs.SetString("FriendRefCodePP", jsonvale["result_push"][0]["referal_refer_code"].ToString());
                 emailID.text = GameManager.emailId;
                 phoneNumber.text = GameManager.mobileNumber;
                 playerName.text = GameManager.playerName;
@@ -975,7 +977,7 @@ public class APIManager : MonoBehaviour
                 GameManager.Instance.userID = GetDataValue(msg, "my_referral_code:");
                 GameManager.Uid = GetDataValue(msg, "uid:");
                 GameManager.friendrefferalCode = GetDataValue(msg, "reference_code:");
-                FindObjectOfType<PickerController>().ChangePlayerTextureFromOutside(UIFlowHandler.uihandler.THETEXTURE);
+                //FindObjectOfType<PickerController>().ChangePlayerTextureFromOutside(UIFlowHandler.uihandler.THETEXTURE);
                 Debug.Log("UID" + GameManager.Uid);
                 Debug.Log("codeRR" + GameManager.friendrefferalCode);
                 Debug.Log("my_referral_code " + GameManager.Instance.userID);
@@ -996,6 +998,7 @@ public class APIManager : MonoBehaviour
                 GameManager.playerName = jsonvale["result_push"][0]["fullname"].ToString();
                 GameManager.mobileNumber = jsonvale["result_push"][0]["mobile"].ToString();
                 GameManager.emailId = jsonvale["result_push"][0]["email"].ToString();
+                PlayerPrefs.SetString("FriendRefCodePP", jsonvale["result_push"][0]["referal_refer_code"].ToString());
                 emailID.text = GameManager.emailId;
                 phoneNumber.text = GameManager.mobileNumber;
                 playerName.text = GameManager.playerName;
@@ -1101,7 +1104,8 @@ public class APIManager : MonoBehaviour
                     pancard.gameObject.SetActive(false);
                 }
                 playerImageUrl = jsonvale["result_push"][0]["profile_pic"].ToString();
-                if (jsonvale["result_push"][0]["profile_pic"].ToString() != "0")
+                Debug.LogWarning("Player img urllll: " + playerImageUrl);
+                if (jsonvale["result_push"][0]["profile_pic"].ToString() != "0" && jsonvale["result_push"][0]["profile_pic"].ToString() != "")
                 {
                     playerImage.gameObject.SetActive(true);
                     playerImageUrl = jsonvale["result_push"][0]["profile_pic"].ToString();
@@ -1179,6 +1183,11 @@ public class APIManager : MonoBehaviour
 
     }
 
+    Hashtable emailNames = new Hashtable()
+    {
+        {"1","Ran"}, {"2","Ema"},{"3","Lud"},{"4","Gam"},{"5","Dam"}
+    };
+
     public void AddPhoneMediaSinupForm()
     {
         Debug.LogError("Phone Media Signup Form");
@@ -1188,10 +1197,11 @@ public class APIManager : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("username", phoneEmail);
         form.AddField("password", "QAZWSX");
-        form.AddField("fullname", phoneEmail);
+        form.AddField("fullname", phoneEmail.Remove(0, 2));
         form.AddField("dob", "01" + "-" + "01" + "-" + "1990");
-        form.AddField("mobile", phoneEmail);
-        string email = "Ran" + UnityEngine.Random.Range(1000000000, 9999999999) + "@gmail.com";
+        form.AddField("mobile", phoneEmail.Remove(0,2));
+        string prefix = emailNames[UnityEngine.Random.Range(1, 6).ToString()].ToString();
+        string email = prefix + UnityEngine.Random.Range(10000000, 99999999) + "@gmail.com";
         form.AddField("email", email.ToString());
         form.AddField("vcode", Application.version);
 
@@ -1625,6 +1635,7 @@ public class APIManager : MonoBehaviour
 
         GameManager.mobileNumber = jsonvale["result_push"][0]["mobile"].ToString();
         GameManager.emailId = jsonvale["result_push"][0]["email"].ToString();
+        PlayerPrefs.SetString("FriendRefCodePP", jsonvale["result_push"][0]["referal_refer_code"].ToString());
         emailID.text = GameManager.emailId;
         phoneNumber.text = GameManager.mobileNumber;
         playerName.text = GameManager.playerName;
@@ -1747,8 +1758,8 @@ public class APIManager : MonoBehaviour
         }
 
         playerImageUrl = jsonvale["result_push"][0]["profile_pic"].ToString();
-        Debug.LogError("plaYER IMAGE Url: " + playerImageUrl);
-        if (jsonvale["result_push"][0]["profile_pic"].ToString() != "0")
+        //Debug.LogWarning("Player img urllll: " + playerImageUrl);
+        if (jsonvale["result_push"][0]["profile_pic"].ToString() != "0" && jsonvale["result_push"][0]["profile_pic"].ToString() != "")
         {
             playerImage.gameObject.SetActive(true);
             playerImageUrl = jsonvale["result_push"][0]["profile_pic"].ToString();

@@ -75,7 +75,11 @@ public class EnterPrivateCodeDialogController : MonoBehaviour
             GameManager.Instance.playfabManager.CreatePrivateRoom(roomID);
             GameManager.Instance.matchPlayerObject.GetComponent<SetMyData>().MatchPlayer();
         }
-       
+        else
+        {
+            ReferenceManager.refMngr.ShowError("Not Enough money");
+        }
+
         //GameConfiguration.GetComponent<GameConfigrationController>().startGame();
     }
 

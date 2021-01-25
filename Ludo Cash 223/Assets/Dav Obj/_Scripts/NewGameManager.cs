@@ -31,7 +31,7 @@ public class NewGameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.LogError(DateTime.Now);
+        //Debug.LogError(DateTime.Now);
         phoneAuthTimeoutMs = 1000000000;
     }
 
@@ -145,7 +145,7 @@ public class NewGameManager : MonoBehaviour
 
     public void EditorTestingSK()
     {
-        apimngr.phoneEmail = "911234567890";
+        apimngr.phoneEmail = "911234527890";
         apimngr.phoneEmail.Replace("+", "");
         apimngr.PhoneMediaSignInStart();
     }

@@ -16,7 +16,7 @@ public class RefferalCodeScript : MonoBehaviour
 
     public string refferalCodeURL;
     public InputField _referalCode;
- 
+
 
     public Text popupText;
     public GameObject popupPanel;
@@ -25,6 +25,8 @@ public class RefferalCodeScript : MonoBehaviour
 
     public Text errortext;
     string status;
+
+    string refCodePP = "FriendRefCodePP";
 
     private string results;
     public string Results
@@ -37,7 +39,25 @@ public class RefferalCodeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+    }
+
+    public GameObject inviteFriendPanel;
+
+    public void OnInviteFriendEnabled()
+    {
+        if (PlayerPrefs.GetString(refCodePP) == "")
+        {
+            _referalCode.text = PlayerPrefs.GetString(refCodePP);
+            _referalCode.interactable = true;
+            inviteFriendPanel.SetActive(true);
+        }
+        else
+        {
+            _referalCode.text = PlayerPrefs.GetString(refCodePP);
+            _referalCode.interactable = false;
+            inviteFriendPanel.SetActive(true);
+        }
     }
 
     public void OnClaimPrize()
@@ -50,10 +70,10 @@ public class RefferalCodeScript : MonoBehaviour
             return;
         }
         WWWForm form = new WWWForm();
-        form.AddField("user_id",GameManager.Uid);
-        form.AddField("refer_code",_referalCode.text);
-        Debug.Log("Code"+ _referalCode.text);
-        WWW w = new WWW(refferalCodeURL,form);
+        form.AddField("user_id", GameManager.Uid);
+        form.AddField("refer_code", _referalCode.text);
+        Debug.Log("Code" + _referalCode.text);
+        WWW w = new WWW(refferalCodeURL, form);
         StartCoroutine(ClaimPrize(w));
     }
 
@@ -80,14 +100,16 @@ public class RefferalCodeScript : MonoBehaviour
                 GameManager.Instance.playfabManager.GetReferCode();
                 loadingPanel.SetActive(false);
                 popupPanel.SetActive(true);
+                PlayerPrefs.SetString(refCodePP, _referalCode.text);
+                _referalCode.interactable = false;
                 StartCoroutine(popUpPanel());
                 FindObjectOfType<OfflineOnlineApiScript>().OnlineCash();
-                _referalCode.text = "";
+                //_referalCode.text = "";
                 friendSharePanel.SetActive(false);
             }
             if (status == "False")
             {
-                _referalCode.text = "";
+                //_referalCode.text = "";
                 loadingPanel.SetActive(false);
                 popupText.text = results;
                 popupPanel.SetActive(true);

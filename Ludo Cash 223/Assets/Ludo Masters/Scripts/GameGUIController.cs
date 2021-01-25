@@ -936,7 +936,7 @@ public class GameGUIController : PunBehaviour
     UpdatePlayerTimer timer;
     public void SendingFinishSlowly(UpdatePlayerTimer timr)
     {
-            //Debug.LogError("Slowly");
+        //Debug.LogError("Slowly");
         if (canCallFinishAgain)
         {
             //Debug.LogError("Slowly Inside");
@@ -956,6 +956,7 @@ public class GameGUIController : PunBehaviour
     {
         if (!TempGameManager.tempGM.iamalive)
         {
+            Debug.LogError("Fuck he is not alive");
             //Debug.LogError("I am not alive");
             timer.Gamedice.RollDiceMAnually();
             Invoke(nameof(AutoMover), 1);
@@ -992,7 +993,7 @@ public class GameGUIController : PunBehaviour
         //if (GameManager.Instance.type == MyGameType.TwoPlayer)
         //{
         //    Debug.LogError("1");
-            //GameManager.Instance.miniGame.setOpponentTurn();
+        //GameManager.Instance.miniGame.setOpponentTurn();
         //}
         //else
         //{
@@ -1218,6 +1219,7 @@ public class GameGUIController : PunBehaviour
     {
         currentPlayerIndex = index;
         GameManager.Instance.currentPlayer = playerObjects[currentPlayerIndex];
+        SetTurn();
     }
 
     private void SetOpponentTurn()

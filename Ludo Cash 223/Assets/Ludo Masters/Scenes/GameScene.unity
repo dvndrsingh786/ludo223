@@ -4735,9 +4735,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 1874406860}
   playerchnaceLeft: {fileID: 0}
@@ -8224,9 +8225,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 364679720}
   autoMoveParent: {fileID: 1766096947}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 364679720}
+  timerObj: {fileID: 1744490102}
   myview: {fileID: 0}
   Gamedice: {fileID: 851839486}
   playerchnaceLeft: {fileID: 1440158355}
@@ -8586,9 +8588,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 631795992}
   playerchnaceLeft: {fileID: 0}
@@ -17438,9 +17441,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -19984,9 +19988,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -20926,9 +20931,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -26480,9 +26486,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -30501,9 +30508,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 716152718}
   playerchnaceLeft: {fileID: 0}
@@ -46304,9 +46312,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 544743518}
   autoMoveParent: {fileID: 2110806871}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 544743518}
+  timerObj: {fileID: 1097647754}
   myview: {fileID: 0}
   Gamedice: {fileID: 1040318659}
   playerchnaceLeft: {fileID: 1459612567}
@@ -51764,9 +51773,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -54742,9 +54752,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -56716,9 +56727,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 257599318}
   playerchnaceLeft: {fileID: 0}
@@ -59005,9 +59017,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 441396354}
   autoMoveParent: {fileID: 1908657089}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 441396354}
+  timerObj: {fileID: 1602248369}
   myview: {fileID: 0}
   Gamedice: {fileID: 1774499976}
   playerchnaceLeft: {fileID: 68091206}
@@ -59563,9 +59576,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -65343,9 +65357,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 1046631942}
   autoMoveParent: {fileID: 2093427918}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 1046631942}
+  timerObj: {fileID: 1902834697}
   myview: {fileID: 0}
   Gamedice: {fileID: 1695593073}
   playerchnaceLeft: {fileID: 1358878187}
@@ -70234,9 +70249,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -77100,9 +77116,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -78039,9 +78056,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 955801145}
   playerchnaceLeft: {fileID: 0}
@@ -79258,9 +79276,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -83507,9 +83526,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -85297,9 +85317,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 1974149640}
   playerchnaceLeft: {fileID: 0}
@@ -88017,9 +88038,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -92185,9 +92207,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -99450,9 +99473,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -99983,9 +100007,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -102412,9 +102437,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -103974,9 +104000,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}
@@ -105457,9 +105484,10 @@ MonoBehaviour:
   paused: 0
   check: 0
   myPlayerName: 
-  maxAutoMoves: 0
-  timerText: {fileID: 0}
   autoMoveParent: {fileID: 0}
+  maxAutoMove: 4
+  secondsRemaining: {fileID: 0}
+  timerObj: {fileID: 0}
   myview: {fileID: 0}
   Gamedice: {fileID: 0}
   playerchnaceLeft: {fileID: 0}

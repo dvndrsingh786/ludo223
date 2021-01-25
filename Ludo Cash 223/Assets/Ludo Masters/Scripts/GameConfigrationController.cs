@@ -298,8 +298,9 @@ public class GameConfigrationController : MonoBehaviour
 
     public void startGame()
     {
+        ReferenceManager.refMngr.loadingPanel.SetActive(true);
         betCoins = GameManager.Instance.currentBetAmount;
-        if (betCoins <= GameManager.Instance.coinsCount || true)
+        if (betCoins <= GameManager.Instance.coinsCount)
         {
             
             if (GameManager.Instance.type != MyGameType.Private)
@@ -328,13 +329,8 @@ public class GameConfigrationController : MonoBehaviour
         else
         {
             GameManager.Instance.dialog.SetActive(true);
-            Invoke(nameof(SetLoadingPanelFalse), 0.5f);
+            ReferenceManager.refMngr.loadingPanel.SetActive(false);
         }
-    }
-
-    void SetLoadingPanelFalse()
-    {
-        ReferenceManager.refMngr.loadingPanel.SetActive(false);
     }
 
     private void ChangeGameMode(bool isActive, MyGameMode mode)

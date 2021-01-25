@@ -6,6 +6,7 @@ using LitJson;
 using System;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 //Pun ID: 67c241bd-3a98-4352-b078-cd48e60868c7
 //Chat ID: aee9d632-9aff-4839-854d-dfa26a47e87b
@@ -29,16 +30,13 @@ public class ReferenceManager : MonoBehaviour
     public GameObject loadingPanel;
     [SerializeField]ReedemCoinsScript redeemCoinScript;
     int invokeCount = 0;
-    public GameObject selectBidPanel;
+    public GameObject errordialogBox;
+    public Text errorMsg;
 
     public TextMeshProUGUI onlineInvestmentText, onlineEarningText, privateInvestText, privateEarningText;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        //Debug.LogError(GetDate());
-        //Debug.LogError(GetTime());
         if (refMngr == null) refMngr = this;
         else if (refMngr != this)
         {
@@ -50,14 +48,19 @@ public class ReferenceManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-        Debug.LogError("My Version: " + Application.version);
-        Debug.LogError("API Version: " + GameManager.appVersionFromApi);
+        Debug.Log("My Version: " + Application.version);
+        Debug.Log("API Version: " + GameManager.appVersionFromApi);
         if (Application.version != GameManager.appVersionFromApi)
         {
-            //UIFlowHandler.uihandler.UpdateApp();
+            UIFlowHandler.uihandler.UpdateApp();
         }
         GetDate();
+    }
 
+    public void ShowError(string error)
+    {
+        errorMsg.text = error;
+        errordialogBox.SetActive(true);
     }
 
     void Awake()
@@ -192,6 +195,8 @@ public class ReferenceManager : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
+            //Debug.LogWarning("Current Bet: " + GameManager.Instance.currentBetAmount);
+            //Debug.LogWarning("Table: " + GetTableValue(GameManager.Instance.currentBetAmount, GameManager.Instance.currentWinningAmount));
             //Debug.LogError(GameManager.paytmNumber);
             //Debug.LogError(GameManager.bankIfscCode);
             //Debug.LogError(GameManager.upiID);
@@ -233,15 +238,11 @@ public class ReferenceManager : MonoBehaviour
         }
     }
 
-    ///<summary>
-    ///Changes Winning Depending upon count of players and bet amount.
-    ///</summary>
     public void ChangeWinningAmountManually(float currentBettingAmount, int totalPlayers)
     {
         GameManager.Instance.currentBettingIndex = 0;
         float tempWinAmount = currentBettingAmount * totalPlayers - float.Parse((0.1 * currentBettingAmount * totalPlayers).ToString());
         GameManager.Instance.currentBetting = new Betting(BettingType.FourPlayer, currentBettingAmount, tempWinAmount);
-        //GameManager.Instance.currentBetAmount = float.Parse(GameManager.Instance.initMenuScript.fourPlayerBetting[GameManager.Instance.currentBettingIndex].bettingValue.ToString());
         GameManager.Instance.currentWinningAmount = tempWinAmount;
         GameManager.Instance.payoutCoins = GameManager.Instance.currentWinningAmount;
     }
@@ -332,28 +333,6 @@ public class ReferenceManager : MonoBehaviour
                 matchingDateType = 0;
                 return false;
             }
-
-            //if today date is equal to table start date or end date
-            //    if (String.Equals(enddDatee, currentDatee) && String.Equals(requiredDatee, currentDatee))
-            //{
-            //    matchingDateType = 3;
-            //    return true;
-            //}
-            //else if (String.Equals(requiredDatee, currentDatee))
-            //{
-            //    matchingDateType = 1;
-            //    return true;
-            //}
-            //else if (String.Equals(enddDatee, currentDatee))
-            //{
-            //    matchingDateType = 2;
-            //    return true;
-            //}
-            //else
-            //{
-            //    matchingDateType = 0;
-            //    return false;
-            //}
         }
         catch
         {
@@ -365,6 +344,17 @@ public class ReferenceManager : MonoBehaviour
 
     int matchingDateType;
 
+    public string TwentyFourToTweleveFormat(string twentyFourFormat)
+    {
+        string[] time = twentyFourFormat.Split(':');
+        string ampm;
+        int hour = int.Parse(time[0]);
+        if (hour > 11) ampm = "pm";
+        else ampm = "am";
+        hour = hour % 12;
+        if (hour == 0) hour = 12;
+        return hour.ToString() + ":" + time[1] + ampm;
+    }
     public bool CheckTime(string startTimee, string endTimee, string currentTimee)
     {
         try
@@ -382,37 +372,11 @@ public class ReferenceManager : MonoBehaviour
             if (cur.Length == 2) curOne = (int.Parse(cur[0]) * 3600) + (int.Parse(cur[1]) * 60);
             else curOne = (int.Parse(cur[0]) * 3600) + (int.Parse(cur[1]) * 60) + int.Parse(cur[2]);
 
-            if (matchingDateType == 0)
-            {
-                return false;
-            }
-            else if (matchingDateType == 4)
+            if (startOne == endOne) return true;
+
+            if (curOne > startOne && curOne < endOne)
             {
                 return true;
-            }
-            else if (matchingDateType == 1)
-            {
-                if (curOne > startOne)
-                {
-                    return true;
-                }
-                else return false;
-            }
-            else if (matchingDateType == 2)
-            {
-                if (curOne < endOne)
-                {
-                    return true;
-                }
-                else return false;
-            }
-            else if (matchingDateType == 3)
-            {
-                if (curOne > startOne && curOne < endOne)
-                {
-                    return true;
-                }
-                return false;
             }
             else return false;
         }

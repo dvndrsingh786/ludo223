@@ -34,7 +34,7 @@ public class TempGameManager : MonoBehaviour
                 }
             }
         }
-        Invoke(nameof(SetTimerNames),0.8f);
+        Invoke(nameof(SetTimerNames), 0.8f);
     }
 
     void SetTimerNames()
@@ -44,7 +44,7 @@ public class TempGameManager : MonoBehaviour
         UpdatePlayerTimer timr2 = contrlr.PlayersTimers[1].GetComponent<UpdatePlayerTimer>();
         UpdatePlayerTimer timr3 = contrlr.PlayersTimers[2].GetComponent<UpdatePlayerTimer>();
         UpdatePlayerTimer timr4 = contrlr.PlayersTimers[3].GetComponent<UpdatePlayerTimer>();
-        if (contrlr.playerObjects.Count > 2)    
+        if (contrlr.playerObjects.Count > 2)
         {
             timr1.myPlayerName = contrlr.playerName.text;
             timr2.myPlayerName = contrlr.playerName2.text;
@@ -64,46 +64,10 @@ public class TempGameManager : MonoBehaviour
         iamalive = state;
     }
 
-    [PunRPC]
     public void SetCurrentPlayerIndex(int index)
     {
         FindObjectOfType<GameGUIController>().SetCurrentPlayerIndexDav(index);
     }
-
-    //[PunRPC]
-    //public void SetIndexes(int index, bool val)
-    //{
-    //    theIndex.Add(index);
-    //    theIndexVal.Add(val);
-    //    theIndex.Sort();
-    //    theIndexVal.Sort();
-    //}
-
-    //[PunRPC]
-    //public void SetIndex(int index, bool val, string info)
-    //{
-    //    Debug.LogError("Setting index from: " + info);
-    //    for (int i = 0; i < theIndex.Count; i++)
-    //    {
-    //        if (theIndex[i].Equals(index))
-    //        {
-    //            Debug.LogError("Bruh" + i);
-    //            theIndexVal[i] = val;
-    //        }
-    //    }
-    //}
-
-    //public bool GetIndex(int index)
-    //{
-    //    for (int i = 0; i < theIndex.Count; i++)
-    //    {
-    //        if (theIndex[i].Equals(index))
-    //        {
-    //            return theIndexVal[i]; 
-    //        }
-    //    }
-    //    return false;
-    //}
 
     void OnApplicationPause(bool pauseStatus)
     {
@@ -134,10 +98,12 @@ public class TempGameManager : MonoBehaviour
         UpdatePlayerTimer timr3 = contrlr.PlayersTimers[2].GetComponent<UpdatePlayerTimer>();
         UpdatePlayerTimer timr4 = contrlr.PlayersTimers[3].GetComponent<UpdatePlayerTimer>();
         Debug.LogWarning("Send Turns");
-        view.RPC("SendTurns", PhotonTargets.Others, timr1.turnCount, timr2.turnCount, timr3.turnCount, timr4.turnCount, timr1.myPlayerName,timr2.myPlayerName,timr3.myPlayerName,timr4.myPlayerName);
+        int currentIndex = FindObjectOfType<GameGUIController>().GetCurrentPlayerIndex();
+        view.RPC("SendTurns", PhotonTargets.Others, timr1.turnCount, timr2.turnCount, timr3.turnCount, timr4.turnCount, timr1.myPlayerName, timr2.myPlayerName, timr3.myPlayerName, timr4.myPlayerName, currentIndex);
+
     }
     [PunRPC]
-    public void SendTurns(int one, int two, int three, int four, string id1, string id2, string id3, string id4)
+    public void SendTurns(int one, int two, int three, int four, string id1, string id2, string id3, string id4, int currentPlayerIndex)
     {
         Debug.LogWarning("Send Turns with params");
         //for (int i = 0; i < 4; i++)
@@ -150,5 +116,6 @@ public class TempGameManager : MonoBehaviour
             //FindObjectOfType<GameGUIController>().PlayersTimers[i].GetComponent<UpdatePlayerTimer>().SetTurn(four, id4);
             //}
         }
+        SetCurrentPlayerIndex(currentPlayerIndex);
     }
 }
